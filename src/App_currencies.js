@@ -29,12 +29,12 @@ class App extends React.Component {
 
     render() {
         const { isLoaded, currencies } = this.state;
-        if (!isLoaded) return(<div><h1> Pleses wait some time.... </h1></div>);
+        if(!isLoaded) return(<div><h1> Pleses wait some time.... </h1></div>);
         return (
           <ul>
             {
-                currencies.map((item) => (
-                    <li key={item.code}>
+                currencies.map((item, index) => (
+                    <li key={ index }>
                       <strong>CURRENCY:</strong> {item.currency} / <strong>CODE:</strong> {item.code} / <strong>MID:</strong> {item.mid}
                     </li>
                 ))
